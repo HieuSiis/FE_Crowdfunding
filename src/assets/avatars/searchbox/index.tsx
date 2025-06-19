@@ -1,0 +1,5 @@
+export { default as Durgham } from './Durgham.svg'
+export { default as Mahfuzul } from './Mahfuzul.svg'
+export { default as Nabil } from './Nabil.svg'
+export { default as Rakesh } from './Rakesh.svg'
+export { default as Rylee } from './Rylee.svg'

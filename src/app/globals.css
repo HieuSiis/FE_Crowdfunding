@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-epilogue: 'Epilogue', sans-serif;
+  --primary: #fff5f2;
+  --secondary: #f7951b;
+}
+
+body {
+  font-family: var(--font-epilogue);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
+/* Tailwind override for ReactQuill toolbar */
+.quill-editor .ql-toolbar.ql-snow {
+  @apply border-none py-3 px-4 bg-neutral-50 text-white dark:bg-dark-200 rounded-lg w-fit mx-auto;
+}
+
+.quill-editor .ql-container.ql-snow {
+  @apply border-none bg-white dark:text-white dark:bg-dark-500 md:min-h-[303px] min-h-[131px] text-sm font-medium;
+}
+
+.quill-editor .ql-editor.ql-blank::before {
+  @apply text-neutral-100 font-medium dark:text-neutral-400 text-sm not-italic;
+}
+
+.quill-editor .ql-toolbar.ql-snow .ql-formats {
+  @apply mx-auto;
+}
+
+/* Custom color quill icon for dark mode */
+.dark .ql-toolbar button .ql-stroke,
+.dark .ql-toolbar .ql-expanded .ql-picker-options,
+.dark .ql-toolbar .ql-align .ql-stroke,
+.dark .ql-toolbar button .ql-fill {
+  @apply stroke-white bg-dark-200 !important
+}
+
+.dark .ql-toolbar .ql-strike .ql-fill, .dark .ql-toolbar .ql-image .ql-fill {
+  @apply fill-white !important
+}
+
+/* Active */
+.dark .ql-toolbar .ql-active .ql-fill {
+  @apply fill-secondary-400 !important
+}
+
+.dark .ql-toolbar .ql-active .ql-stroke, .dark .ql-toolbar .ql-active .ql-fill {
+  @apply stroke-secondary-400 !important
+}
+
+/* Just on desktop */
+@media (min-width: 768px) {
+
+  /* Hover */
+  .dark .ql-toolbar button:hover .ql-stroke,
+  .dark .ql-toolbar button:hover .ql-fill {
+    @apply stroke-secondary-400 !important
+  }
+
+  .dark .ql-toolbar .ql-expanded .ql-picker-options [role="button"].ql-picker-item:hover .ql-stroke {
+    @apply stroke-secondary-400 !important
+  }
+
+  .dark .ql-toolbar button.ql-strike:hover .ql-fill, .dark .ql-toolbar button.ql-image:hover .ql-fill {
+    @apply fill-secondary-400 !important
+  }
+}
+
+/* Custom icon input type date */
+.custom-date::-webkit-calendar-picker-indicator {
+  @apply opacity-0 cursor-pointer
+}
+
+/* Custom OTP input */
+@layer utilities {
+
+  .no-spinner::-webkit-inner-spin-button,
+  .no-spinner::-webkit-outer-spin-button {
+    @apply appearance-none;
+  }
+
+  .no-spinner {
+    @apply appearance-none
+  }
+}
