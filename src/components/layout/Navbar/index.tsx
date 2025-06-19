@@ -90,12 +90,19 @@ const Navbar = () => {
                 <div
                     className="flex items-center justify-center p-[10px] rounded-[10px] cursor-pointer transition-all duration-300 bg-transparent"
                     onClick={() => {
-                        const confirmed = window.confirm('Are you sure you want to log out?');
-                        if (confirmed) {
+                        // const confirmed = window.confirm('Are you sure you want to log out?');
+                        // if (confirmed) {
 
-                            dispatch(setAuthUser(null)); // Clear user state
-                            signOut({ callbackUrl: '/' });
+                        //     dispatch(setAuthUser(null)); // Clear user state
+                        //     signOut({ callbackUrl: '/' });
 
+                        // }
+                        if (typeof window !== 'undefined') {
+                            const confirmed = window.confirm('Are you sure you want to log out?');
+                            if (confirmed) {
+                                dispatch(setAuthUser(null)); // Clear user state
+                                signOut({ callbackUrl: '/' });
+                            }
                         }
                     }}
                 >
