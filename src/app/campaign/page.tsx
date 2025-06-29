@@ -1,4 +1,5 @@
 'use client'
+import CampaignComponent from '@/components/layout/Campaign'
 import SecondaryLightButton from '@/components/ui/Button/SecondaryLightButton'
 import { CampaignData } from '@/types/campaign/campaign'
 
@@ -10,11 +11,6 @@ import { API_URL } from '../../../server'
 import { useSession } from 'next-auth/react'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux/store'
-import dynamic from 'next/dynamic'
-
-const CampaignComponent = dynamic(() => import('@/components/layout/Campaign'), {
-    ssr: false,
-})
 
 const Campaign = () => {
 

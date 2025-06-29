@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Rocket from '@/assets/images/campaign/rocket.svg'
 import { Dropdown } from "@/components/ui/Icon";
-import ReactQuill from "react-quill";
+// import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import MoneyBagIcon from "@/components/ui/Icon/Campaign/MoneyBagIcon";
 import Link from "next/link";
@@ -12,6 +12,9 @@ import PrimaryButton from "@/components/ui/Button/PrimaryButton";
 import axios from "axios";
 import { API_URL } from "../../../../server";
 import { useRouter } from "next/navigation";
+import dynamic from "next/dynamic";
+
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 export default function StartCampaignPage() {
 
