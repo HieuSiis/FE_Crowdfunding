@@ -1,4 +1,4 @@
-export const dataCampaign = {
+export const dataCampaignStatic = {
     createdCampaigns: [
         {
             category: 'Architecture',

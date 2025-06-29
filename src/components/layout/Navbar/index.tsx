@@ -59,21 +59,21 @@ const Navbar = () => {
         setTheme(theme === 'dark' ? 'light' : 'dark')
     }
 
-    // const SignOut = async () => {
-    //     setLoading(true)
-    //     try {
-    //         //window.confirm('Are you sure you want to log out?')
-    //         await axios.post(`${API_URL}/users/sign-out`, {
-    //             withCredentials: true
-    //         })
-    //         dispatch(setAuthUser(null)) // Clear user state
-    //     } catch (error) {
-    //         alert('Error logging out. Please try again.')
-    //         console.log(error)
-    //     } finally {
-    //         setLoading(false)
-    //     }
-    // }
+    const SignOut = async () => {
+        setLoading(true)
+        try {
+            window.confirm('Are you sure you want to log out?')
+            await axios.post(`${API_URL}/users/sign-out`, {
+                withCredentials: true
+            })
+            dispatch(setAuthUser(null)) // Clear user state
+        } catch (error) {
+            alert('Error logging out. Please try again.')
+            console.log(error)
+        } finally {
+            setLoading(false)
+        }
+    }
 
     return (
         <div className='md:flex hidden flex-col mt-4 px-[14px] py-10 rounded-[20px] dark:bg-dark-500 shadow-md h-[550px] justify-between'>
@@ -97,13 +97,8 @@ const Navbar = () => {
                         //     signOut({ callbackUrl: '/' });
 
                         // }
-                        if (typeof window !== 'undefined') {
-                            const confirmed = window.confirm('Are you sure you want to log out?');
-                            if (confirmed) {
-                                dispatch(setAuthUser(null)); // Clear user state
-                                signOut({ callbackUrl: '/' });
-                            }
-                        }
+
+                        SignOut()
                     }}
                 >
                     <Logout className="text-error" />

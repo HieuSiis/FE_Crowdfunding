@@ -25,7 +25,7 @@ export default function CampaignCard({
     avatar
 }: CampaignCardProps) {
     return (
-        <div className="bg-white dark:bg-dark-500 rounded-2xl shadow-sm flex-col md:w-auto w-[327px] flex-shrink-0">
+        <div className="bg-white dark:bg-dark-500 rounded-2xl shadow-sm flex-col md:w-auto w-[327px] flex-shrink-0 snap-start">
             <div className="rounded-2xl overflow-hidden">
                 <Image src={image} alt={title} width={288} height={158} className="w-full h-full object-cover" />
             </div>

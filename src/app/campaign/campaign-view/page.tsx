@@ -256,7 +256,7 @@ const CampaignView = () => {
                 <h2 className="md:text-xl text-lg font-semibold md:mb-10 mb-5 md:mt-[70px] mt-[10px] text-neutral-500 dark:text-white">You also may be interested in</h2>
                 <div className='lg:max-w-full md:max-w-[627px] max-w-[327px] overflow-x-auto'>
                     <div className="flex lg:grid md:grid-cols-2 lg:grid-cols-4 gap-[30px] md:pb-0 pb-4">
-                        {dummyData.popular.map((c: any, i: number) => (
+                        {dummyData.popular.slice(0, 4).map((c: any, i: number) => (
                             <CampaignCard key={i} {...c} />
                         ))}
                     </div>

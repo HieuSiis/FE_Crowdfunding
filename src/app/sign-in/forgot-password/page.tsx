@@ -18,13 +18,17 @@ const ForgotPassword = () => {
     const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
     const [loadingResend, setResendLoading] = useState(false)
     const [loadingConfirm, setConfirmLoading] = useState(false)
+
+    const [count, setCount] = useState(0);
+    const [disabled, setDisabled] = useState(false);
+
     const dispatch = useDispatch()
 
     const router = useRouter()
     const user = useSelector((state: RootState) => state.auth.user)
 
     useEffect(() => {
-        if (!user) router.replace("/sign-in")
+        if (!user && !email) router.replace("/sign-in")
     }, [user, router])
 
     const handleChange = (
@@ -52,7 +56,14 @@ const ForgotPassword = () => {
     }
     console.log("email", email)
     const handleResendOtp = async () => {
-        setResendLoading(true);
+        if (count < 3) {
+            // gửi otp
+            setCount(prev => prev + 1);
+            setTimeout(() => setDisabled(false), 300000); // sau 5p
+        } else {
+            setResendLoading(true);
+
+        }
         try {
             await axios.post(`${API_URL}/users/forget-password`, { email }, { withCredentials: true });
 
@@ -73,9 +84,10 @@ const ForgotPassword = () => {
                 { otp: otpValue },
                 { withCredentials: true }
             );
-            router.push('/sign-in/create-new-password')
-            // const user = response.data.data.user
 
+            router.push(`/sign-in/create-new-password?email=${encodeURIComponent(email || "")}`)
+            // const user = response.data.data.user
+            // console.log("user", user)
             // setTimeout(() => {
             //     dispatch(setAuthUser(user))
             // }, 100);
@@ -86,6 +98,16 @@ const ForgotPassword = () => {
             setConfirmLoading(false);
         }
     }
+
+
+    const handleResend = () => {
+        if (count < 3) {
+            // gửi otp
+            setCount(prev => prev + 1);
+            setTimeout(() => setDisabled(false), 300000); // sau 5p
+        }
+    }
+
     return (
         <div className="flex items-center justify-center md:h-screen md:mt-0 mt-14 w-full z-20">
             <div className='bg-secondary-500 dark:bg-primary-600 bg-opacity-5 dark:bg-opacity-5 w-[2838px] h-[2838px] rounded-[2838px] absolute md:top-[528px] top-[100px] -left-[418px] -z-10'></div>
@@ -115,7 +137,7 @@ const ForgotPassword = () => {
                 {/* Resend */}
                 <div className="pb-3 flex items-center gap-2">
                     <button
-                        disabled={loadingResend}
+                        disabled={loadingResend || disabled}
                         onClick={handleResendOtp}
                         className={`${loadingResend ? '' : 'hover:underline'}text-sm font-semibold text-secondary-400 `}>
                         Resend OTP

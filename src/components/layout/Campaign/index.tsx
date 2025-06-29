@@ -1,3 +1,4 @@
+'use client'
 import { Folder } from '@/components/ui/Icon'
 import Link from 'next/link'
 import React from 'react'

@@ -104,8 +104,11 @@ const VerifyOTP = () => {
 
             alert("Password updated successfully!");
             localStorage.removeItem('pendingResetPassword');
-
-            router.push('/profile');
+            setTimeout(() => {
+                dispatch(setAuthUser(null));
+            }, 100);
+            router.push('/sign-in');
+            // router.push('/profile');
         } catch (error: any) {
             console.error(error);
             alert(error?.response?.data?.message || "Something went wrong");

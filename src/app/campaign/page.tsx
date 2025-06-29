@@ -1,14 +1,44 @@
 'use client'
 import CampaignComponent from '@/components/layout/Campaign'
 import SecondaryLightButton from '@/components/ui/Button/SecondaryLightButton'
-import { dataCampaign } from '@/data/campaign'
+import { CampaignData } from '@/types/campaign/campaign'
+
+import { dataCampaignStatic } from '@/data/campaign'
+import axios from 'axios'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { API_URL } from '../../../server'
+import { useSession } from 'next-auth/react'
+import { useSelector } from 'react-redux'
+import { RootState } from '@/redux/store'
 
 const Campaign = () => {
 
     const [showCreated, setShowCreated] = useState(3);
     const [showFeatured, setShowFeatured] = useState(3);
+
+    const [dataCampaign, setDataCampaign] = useState<CampaignData>({ createdCampaigns: [] });
+
+    const user = useSelector((state: RootState) => state.auth.user)
+
+    const { status } = useSession()
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await axios.get(`${API_URL}/campaigns/my-campaigns`, {
+                    withCredentials: true, // if has cookie token
+                });
+                setDataCampaign(res.data.data);
+            } catch (err) {
+                console.error(err);
+            }
+        };
+        if (status === "authenticated" || user) fetchData()
+        else {
+            setDataCampaign({ createdCampaigns: [] });
+        }
+    }, [status, user]);
 
     return (
         <div className='md:px-2 lg:px-10 w-full'>
@@ -34,7 +64,7 @@ const Campaign = () => {
             {dataCampaign.createdCampaigns.slice(0, showCreated).map((item, index) => (
                 <div key={index} className='mb-10'>
                     <CampaignComponent
-                        category={item.category}
+                        category={item?.category}
                         title={item.title}
                         description={item.description}
                         srcVideo={item.srcVideo}
@@ -55,9 +85,9 @@ const Campaign = () => {
             </div>
 
 
-            <h2 className="text-lg font-semibold mb-5">Your Campaign <span className='text-secondary-500'>({dataCampaign.featuredCampaigns.length})</span></h2>
+            <h2 className="text-lg font-semibold mb-5">Your Campaign <span className='text-secondary-500'>({dataCampaignStatic.featuredCampaigns.length})</span></h2>
 
-            {dataCampaign.featuredCampaigns.slice(0, showFeatured).map((itm, idx) => (
+            {dataCampaignStatic.featuredCampaigns.slice(0, showFeatured).map((itm, idx) => (
                 <div key={idx} className='mb-10'>
                     <CampaignComponent
                         category={itm.category}
@@ -73,7 +103,7 @@ const Campaign = () => {
             ))}
             <div className='flex justify-center mb-10'>
                 <SecondaryLightButton
-                    className={`md:px-12 px-8 ${showFeatured >= dataCampaign.featuredCampaigns.length ? 'cursor-not-allowed pointer-events-none opacity-50' : ''}`}
+                    className={`md:px-12 px-8 ${showFeatured >= dataCampaignStatic.featuredCampaigns.length ? 'cursor-not-allowed pointer-events-none opacity-50' : ''}`}
                     onClick={() => setShowFeatured(prev => prev + 3)} >
 
                     See more+

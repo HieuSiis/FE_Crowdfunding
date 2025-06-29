@@ -3,16 +3,17 @@ import React, { useEffect } from 'react'
 import Clap from '@/assets/images/Clap.svg'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux/store'
 
 const Success = () => {
     const router = useRouter()
     const user = useSelector((state: RootState) => state.auth.user)
-
+    const searchParams = useSearchParams()
+    const email = searchParams.get("email")
     useEffect(() => {
-        if (!user) router.replace("/sign-in")
+        if (!user && !email) router.replace("/sign-in")
     }, [user, router])
 
     return (

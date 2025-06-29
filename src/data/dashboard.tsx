@@ -1,11 +1,11 @@
-import { Camera, Chair, IMac, LostSoul, Powered, Restaurant, Shoes, Village } from '@/assets/images/dashboard';
-import { Adom, Cham, Mahbubul, Mahfuzul, Nill, Sajib, Saleh, Sami } from '@/assets/avatars/dashboard';
+// import { Camera, Chair, IMac, LostSoul, Powered, Restaurant, Shoes, Village } from '@/assets/images/dashboard';
+// import { Adom, Cham, Mahbubul, Mahfuzul, Nill, Sajib, Saleh, Sami } from '@/assets/avatars/dashboard';
 
 export const dummyData = {
     popular: [
         {
             id: 1,
-            image: Powered,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351520/powered-ppl_mtywpe.svg",
             category: "Education",
             title: "Powered Kits Learning Boxes",
             description: "Fun, durable and reusable boxes with eco-friendly options.",
@@ -13,11 +13,11 @@ export const dummyData = {
             target: 1900,
             backers: 173,
             author: "Mahfuzul Nabil",
-            avatar: Mahfuzul
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351812/Mah-ppl_svhng0.svg"
         },
         {
             id: 2,
-            image: Village,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351590/village-ppl_w6wyxq.svg",
             category: "Real Estate",
             title: "Building Hope Village",
             description: "Together we can create access for everyone!",
@@ -25,11 +25,11 @@ export const dummyData = {
             target: 1900,
             backers: 50,
             author: "Adom Shafi",
-            avatar: Adom
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351880/Adom-ppl_qpstgn.svg"
         },
         {
             id: 3,
-            image: IMac,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351619/iMac-ppl_hrnvkv.svg",
             category: "Real Estate",
             title: "New iMac For My Business!",
             description: "My computer decided to die. As a result, my small business.",
@@ -37,11 +37,11 @@ export const dummyData = {
             target: 1800,
             backers: 12,
             author: "Sami Ahmed",
-            avatar: Sami
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351904/Sami-ppl_qzembr.svg"
         },
         {
             id: 4,
-            image: Chair,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351619/iMac-ppl_hrnvkv.svg",
             category: "Home",
             title: "The Watchman's Chairs",
             description: "Your home for indie and classic cinema has just been handed an...",
@@ -49,12 +49,205 @@ export const dummyData = {
             target: 10900,
             backers: 100,
             author: "Nill",
-            avatar: Nill
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351927/Nill-ppl_yrrh0n.svg"
         },
+        {
+            id: 5,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351590/village-ppl_w6wyxq.svg",
+            category: "Health",
+            title: "Healthy Meals for Kids",
+            description: "Nutritious food program for underprivileged children.",
+            amountRaised: 1500,
+            target: 3000,
+            backers: 80,
+            author: "Sarah Khan",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351812/Mah-ppl_svhng0.svg"
+        },
+        {
+            id: 6,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351520/powered-ppl_mtywpe.svg",
+            category: "Technology",
+            title: "Smart Plant Monitor",
+            description: "Track moisture, light and growth of your plants.",
+            amountRaised: 3000,
+            target: 4500,
+            backers: 123,
+            author: "John Smith",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351880/Adom-ppl_qpstgn.svg"
+        },
+        {
+            id: 7,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351619/iMac-ppl_hrnvkv.svg",
+            category: "Education",
+            title: "Digital Literacy for Seniors",
+            description: "Teaching seniors how to stay connected digitally.",
+            amountRaised: 1700,
+            target: 2200,
+            backers: 66,
+            author: "Lina Ma",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351904/Sami-ppl_qzembr.svg"
+        },
+        {
+            id: 8,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351590/village-ppl_w6wyxq.svg",
+            category: "Art",
+            title: "Mural for the Community Center",
+            description: "A collaborative mural project to inspire unity.",
+            amountRaised: 900,
+            target: 2000,
+            backers: 27,
+            author: "Emily Rose",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351927/Nill-ppl_yrrh0n.svg"
+        },
+        {
+            id: 9,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351520/powered-ppl_mtywpe.svg",
+            category: "Environment",
+            title: "Clean Water Filters",
+            description: "Distribute water filters in rural areas.",
+            amountRaised: 2200,
+            target: 4000,
+            backers: 92,
+            author: "Tariq Ibrahim",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351812/Mah-ppl_svhng0.svg"
+        },
+        {
+            id: 10,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351619/iMac-ppl_hrnvkv.svg",
+            category: "Home",
+            title: "Eco-Friendly Furniture",
+            description: "Sustainable and minimalist design for all homes.",
+            amountRaised: 3100,
+            target: 5000,
+            backers: 101,
+            author: "Anna Bell",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351904/Sami-ppl_qzembr.svg"
+        },
+        {
+            id: 11,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351590/village-ppl_w6wyxq.svg",
+            category: "Sports",
+            title: "Community Youth Football",
+            description: "Providing kits and gear for local youth teams.",
+            amountRaised: 800,
+            target: 2500,
+            backers: 33,
+            author: "Tommy Nguyen",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351927/Nill-ppl_yrrh0n.svg"
+        },
+        {
+            id: 12,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351520/powered-ppl_mtywpe.svg",
+            category: "Science",
+            title: "Mobile Science Lab",
+            description: "Taking hands-on experiments to rural schools.",
+            amountRaised: 2100,
+            target: 3800,
+            backers: 59,
+            author: "Ali Zafar",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351880/Adom-ppl_qpstgn.svg"
+        },
+        {
+            id: 13,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351619/iMac-ppl_hrnvkv.svg",
+            category: "Design",
+            title: "Creative Portfolio Platform",
+            description: "A space for designers to showcase their work.",
+            amountRaised: 1700,
+            target: 2900,
+            backers: 45,
+            author: "Lisa Tran",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351812/Mah-ppl_svhng0.svg"
+        },
+        {
+            id: 14,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351590/village-ppl_w6wyxq.svg",
+            category: "Theater",
+            title: "Youth Theater Workshop",
+            description: "Fund for costumes and stage equipment.",
+            amountRaised: 950,
+            target: 1700,
+            backers: 23,
+            author: "Hannah Kim",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351904/Sami-ppl_qzembr.svg"
+        },
+        {
+            id: 15,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351520/powered-ppl_mtywpe.svg",
+            category: "Film",
+            title: "Short Film on Climate Change",
+            description: "Raising awareness through compelling visuals.",
+            amountRaised: 3200,
+            target: 5000,
+            backers: 129,
+            author: "George Le",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351927/Nill-ppl_yrrh0n.svg"
+        },
+        {
+            id: 16,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351619/iMac-ppl_hrnvkv.svg",
+            category: "Travel",
+            title: "Explore ASEAN on Motorbike",
+            description: "Funding for video docu-series about SEA travel.",
+            amountRaised: 1800,
+            target: 3300,
+            backers: 74,
+            author: "Tung Pham",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351880/Adom-ppl_qpstgn.svg"
+        },
+        {
+            id: 17,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351590/village-ppl_w6wyxq.svg",
+            category: "History",
+            title: "Preserve Our Local Archives",
+            description: "Digitizing rare photos and newspaper collections.",
+            amountRaised: 1200,
+            target: 2000,
+            backers: 41,
+            author: "Jane Bao",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351904/Sami-ppl_qzembr.svg"
+        },
+        {
+            id: 18,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351520/powered-ppl_mtywpe.svg",
+            category: "Coding",
+            title: "Tech Bootcamp for Teens",
+            description: "Teaching web development to local students.",
+            amountRaised: 2500,
+            target: 3000,
+            backers: 95,
+            author: "Kevin Ha",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351812/Mah-ppl_svhng0.svg"
+        },
+        {
+            id: 19,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351619/iMac-ppl_hrnvkv.svg",
+            category: "Charity",
+            title: "Support Homeless Shelter",
+            description: "Emergency food and hygiene kits for the needy.",
+            amountRaised: 2750,
+            target: 4000,
+            backers: 107,
+            author: "Aliyah Noor",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351927/Nill-ppl_yrrh0n.svg"
+        },
+        {
+            id: 20,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351590/village-ppl_w6wyxq.svg",
+            category: "Craft",
+            title: "Handmade Eco Bags",
+            description: "Plastic-free lifestyle with handmade bags.",
+            amountRaised: 1850,
+            target: 2600,
+            backers: 62,
+            author: "Maya Chen",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351880/Adom-ppl_qpstgn.svg"
+        },
+
     ],
     recent: [
         {
-            image: Camera,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351665/camera-rc_ulxrps.svg",
             category: "Camera Gear",
             title: "Advanced 4K Action Camera",
             description: "THE SV RIG. - Start Creating Now Without Limitation.",
@@ -62,10 +255,10 @@ export const dummyData = {
             target: 1100,
             backers: 173,
             author: "Cham",
-            avatar: Cham
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351949/Cham-rc_z70cb2.svg"
         },
         {
-            image: Restaurant,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351684/restaurant-rc_quelfs.svg",
             category: "Food",
             title: "Resturants Open Business",
             description: "A unique restaurant, bar, beer garden, and tailgating location",
@@ -73,10 +266,10 @@ export const dummyData = {
             target: 1200,
             backers: 150,
             author: "Mahbubul Alom",
-            avatar: Mahbubul
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351971/Mahbu-rc_a119my.svg"
         },
         {
-            image: LostSoul,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351712/lostSoul-rc_wr8ftb.svg",
             category: "Comics",
             title: "“Lost Soul” graphic novel",
             description: 'A team of ex-superheroes attempt to save a "monster"',
@@ -84,10 +277,10 @@ export const dummyData = {
             target: 1900,
             backers: 5,
             author: "Sajib Rahman",
-            avatar: Sajib
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351993/Sajib-rc_kiu7az.svg"
         },
         {
-            image: Shoes,
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351731/shoes-rc_wdq8ff.svg",
             category: "Clothe & Wearables",
             title: "Cool Comfy Shoes easy on You",
             description: "A new category of super comfortable casual shoes.",
@@ -95,7 +288,184 @@ export const dummyData = {
             target: 5000,
             backers: 100,
             author: "Saleh Ahmed",
-            avatar: Saleh
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750352014/Saleh-rc_jzdvrz.svg"
         },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351712/lostSoul-rc_wr8ftb.svg",
+            category: "Music",
+            title: "Local Band New Album",
+            description: "Support our first studio album production!",
+            amountRaised: 700,
+            target: 2500,
+            backers: 34,
+            author: "Alex Bui",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351949/Cham-rc_z70cb2.svg"
+        },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351665/camera-rc_ulxrps.svg",
+            category: "Games",
+            title: "Board Game for Families",
+            description: "A new cooperative board game experience.",
+            amountRaised: 2200,
+            target: 3000,
+            backers: 88,
+            author: "Jenny Ngo",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351971/Mahbu-rc_a119my.svg"
+        },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351731/shoes-rc_wdq8ff.svg",
+            category: "Wellness",
+            title: "Relaxation Aromatherapy Kit",
+            description: "Smell good, feel better – our new essential oils kit.",
+            amountRaised: 1300,
+            target: 2000,
+            backers: 56,
+            author: "Kevin Dinh",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351993/Sajib-rc_kiu7az.svg"
+        },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351684/restaurant-rc_quelfs.svg",
+            category: "Books",
+            title: "Children's Story Series",
+            description: "Publishing inclusive stories for young readers.",
+            amountRaised: 400,
+            target: 1500,
+            backers: 24,
+            author: "Linda Ho",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750352014/Saleh-rc_jzdvrz.svg"
+        },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351712/lostSoul-rc_wr8ftb.svg",
+            category: "Events",
+            title: "Community Outdoor Cinema",
+            description: "Bring neighbors together with monthly film screenings.",
+            amountRaised: 1000,
+            target: 2000,
+            backers: 77,
+            author: "Thom Vo",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351949/Cham-rc_z70cb2.svg"
+        },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351665/camera-rc_ulxrps.svg",
+            category: "Fashion",
+            title: "Minimalist Leather Goods",
+            description: "Sleek, high-quality leather essentials for daily use.",
+            amountRaised: 3500,
+            target: 4200,
+            backers: 112,
+            author: "Minh Chau",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351971/Mahbu-rc_a119my.svg"
+        },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351731/shoes-rc_wdq8ff.svg",
+            category: "Gardening",
+            title: "Urban Gardening Toolkit",
+            description: "Help us bring nature back to balconies and rooftops.",
+            amountRaised: 1200,
+            target: 2200,
+            backers: 45,
+            author: "Tracy Vo",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750352014/Saleh-rc_jzdvrz.svg"
+        },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351665/camera-rc_ulxrps.svg",
+            category: "Pets",
+            title: "Mobile Vet for Stray Animals",
+            description: "Free treatment for animals in poor neighborhoods.",
+            amountRaised: 900,
+            target: 1800,
+            backers: 30,
+            author: "Thanh Dang",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351949/Cham-rc_z70cb2.svg"
+        },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351712/lostSoul-rc_wr8ftb.svg",
+            category: "Education",
+            title: "Free English Classes for Kids",
+            description: "Empowering kids through free language lessons.",
+            amountRaised: 1350,
+            target: 2400,
+            backers: 55,
+            author: "David Ly",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351993/Sajib-rc_kiu7az.svg"
+        },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351684/restaurant-rc_quelfs.svg",
+            category: "Art",
+            title: "Paint the School Walls!",
+            description: "Colorful murals by and for students.",
+            amountRaised: 1100,
+            target: 1600,
+            backers: 49,
+            author: "Kim Doan",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351971/Mahbu-rc_a119my.svg"
+        },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351731/shoes-rc_wdq8ff.svg",
+            category: "Tech",
+            title: "Build a DIY Robot Kit",
+            description: "Educational robotics for young creators.",
+            amountRaised: 1800,
+            target: 3000,
+            backers: 60,
+            author: "Hung Le",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750352014/Saleh-rc_jzdvrz.svg"
+        },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351665/camera-rc_ulxrps.svg",
+            category: "Photography",
+            title: "Portraits of Forgotten Faces",
+            description: "Street portrait photography project across the city.",
+            amountRaised: 2200,
+            target: 2800,
+            backers: 71,
+            author: "Andy Vo",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351949/Cham-rc_z70cb2.svg"
+        },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351684/restaurant-rc_quelfs.svg",
+            category: "Culture",
+            title: "Vietnamese Folk Tales Animation",
+            description: "Preserve stories by transforming them into animation.",
+            amountRaised: 2400,
+            target: 3400,
+            backers: 83,
+            author: "Lan Anh",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351971/Mahbu-rc_a119my.svg"
+        },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351712/lostSoul-rc_wr8ftb.svg",
+            category: "Kids",
+            title: "STEM Toys for Local Schools",
+            description: "Interactive learning tools for young minds.",
+            amountRaised: 2600,
+            target: 3200,
+            backers: 90,
+            author: "Quang Ho",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351993/Sajib-rc_kiu7az.svg"
+        },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351731/shoes-rc_wdq8ff.svg",
+            category: "Fitness",
+            title: "Inclusive Yoga Studio",
+            description: "A welcoming space for all abilities and body types.",
+            amountRaised: 1900,
+            target: 2700,
+            backers: 65,
+            author: "Mai Tran",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750352014/Saleh-rc_jzdvrz.svg"
+        },
+        {
+            image: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351665/camera-rc_ulxrps.svg",
+            category: "Tech",
+            title: "Offline Learning App",
+            description: "An educational app that works without the internet.",
+            amountRaised: 2700,
+            target: 3500,
+            backers: 99,
+            author: "Nam Pham",
+            avatar: "https://res.cloudinary.com/dl1tfq8ss/image/upload/v1750351949/Cham-rc_z70cb2.svg"
+        },
+
     ]
 };

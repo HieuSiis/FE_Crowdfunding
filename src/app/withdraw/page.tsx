@@ -1,4 +1,4 @@
-
+'use client'
 import { Star } from '@/components/ui/Icon'
 import UnionIcon from '@/components/ui/Icon/Withdraw/UnionIcon'
 import Image from 'next/image'

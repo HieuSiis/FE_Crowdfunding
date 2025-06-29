@@ -9,10 +9,29 @@ import "react-quill/dist/quill.snow.css";
 import MoneyBagIcon from "@/components/ui/Icon/Campaign/MoneyBagIcon";
 import Link from "next/link";
 import PrimaryButton from "@/components/ui/Button/PrimaryButton";
+import axios from "axios";
+import { API_URL } from "../../../../server";
+import { useRouter } from "next/navigation";
 
 export default function StartCampaignPage() {
 
     const [value, setValue] = useState("");
+    const [loading, setLoading] = useState(false);
+    const router = useRouter();
+    const [errors, setErrors] = useState({
+        title: "",
+        category: "",
+        shortDescription: "",
+        story: "",
+        goal: "",
+        raised: "",
+        amountPrefilled: "",
+        video: "",
+        endMethod: "",
+        country: "",
+        startDate: "",
+        endDate: "",
+    });
     console.log(value)
     const [formData, setFormData] = useState({
         title: "",
@@ -28,6 +47,28 @@ export default function StartCampaignPage() {
         startDate: "",
         endDate: "",
     });
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setLoading(true);
+
+        try {
+            const response = await axios.post(
+                `${API_URL}/campaigns/create`, { ...formData, story: value, }, { withCredentials: true, }
+            );
+            console.log("Campaign created:", response.data);
+            alert("Campaign created successfully!");
+            router.push("/campaign");
+        } catch (error: any) {
+            setErrors((prev) => ({
+                ...prev,
+                title: error?.response?.data?.message || "Error creating campaign"
+            }));
+            console.error("Error:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <div className="md:pl-10 lg:pl-[93px] md:pr-[52px] w-full md:mt-3">

@@ -8,13 +8,15 @@ import { useSelector } from 'react-redux'
 import { RootState } from '@/redux/store'
 import axios from 'axios'
 import { API_URL } from '../../../../server'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { Loader } from 'lucide-react'
 
 const CreateNewPassword = () => {
     const [showNewPassword, setShowNewPassword] = useState(false)
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-    const email = useSelector((state: RootState) => state.auth.user?.email)
+    //const email = useSelector((state: RootState) => state.auth.user?.email)
+    const searchParams = useSearchParams()
+    const email = searchParams.get("email")
     const router = useRouter()
     const [loading, setLoading] = useState(false)
     const user = useSelector((state: RootState) => state.auth.user)
@@ -28,7 +30,7 @@ const CreateNewPassword = () => {
     });
 
     useEffect(() => {
-        if (!user) router.replace("/sign-in")
+        if (!user && !email) router.replace("/sign-in")
     }, [user, router])
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -93,7 +95,7 @@ const CreateNewPassword = () => {
             const data = { email, password: formData.newPassword, passwordConfirm: formData.confirmPassword };
 
             const response = await axios.post(`${API_URL}/users/reset-password`, data, { withCredentials: true })
-            router.push('/sign-in/password-reset-success')
+            router.push(`/sign-in/password-reset-success?email=${encodeURIComponent(email || "")}`)
         } catch (error) {
             console.log(error)
             alert(error)

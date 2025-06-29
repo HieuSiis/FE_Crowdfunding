@@ -20,6 +20,7 @@ export default function AccountInformation() {
     const router = useRouter();
     const user = useSelector((state: RootState) => state.auth.user)
 
+
     console.log(user)
     const [form, setForm] = useState({
         firstName: 'Mahfuzul Islam',
@@ -101,6 +102,8 @@ export default function AccountInformation() {
         }
     }, [status, router, session, user]);
 
+
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
@@ -109,39 +112,6 @@ export default function AccountInformation() {
         setIsEditingPersonal(false);
         console.log('Personal Info:', form);
     };
-
-    // const handleSubmitCredentials = async () => {
-    //     if (!formData.newPassword || !formData.confirmPassword) {
-    //         alert("Please fill in all fields.");
-    //         return;
-    //     }
-
-    //     if (formData.newPassword.length < 8) {
-    //         setErrors(prev => ({ ...prev, newPassword: 'Password must be at least 8 characters' }));
-    //         return;
-    //     }
-
-    //     if (formData.newPassword !== formData.confirmPassword) {
-    //         setErrors(prev => ({ ...prev, confirmPassword: 'Passwords do not match' }));
-    //         return;
-    //     }
-
-    //     setLoading(true)
-
-    //     try {
-    //         const data = { email: user?.email, password: formData.newPassword, passwordConfirm: formData.confirmPassword };
-
-    //         const response = await axios.post(`${API_URL}/users/reset-password`, data, { withCredentials: true })
-    //         alert("Password updated successfully!");
-    //         setIsEditingCredentials(false);
-
-    //     } catch (error) {
-    //         console.log(error)
-    //         alert(error)
-    //     } finally {
-    //         setLoading(false)
-    //     }
-    // };
 
     const handleSubmitCredentials = async () => {
         if (!formData.newPassword || !formData.confirmPassword) {

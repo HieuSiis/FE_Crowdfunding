@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Award from '@/assets/images/award.svg'
 import Image from 'next/image'
